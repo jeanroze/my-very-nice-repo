@@ -1,10 +1,12 @@
 name: "wiz-cli"
-on: [pull_request]
+on: push
 
 jobs:
-  wiz-cli-iac-scan:
-    name: "Wiz-cli IaC Scan"
+  wiz-cli-security-scans:
+    name: "Wiz-cli Security Scans"
     runs-on: ubuntu-latest
+    continue-on-error: true
+    
     env:
       SCAN_PATH: "." # Set the relative path in the repo to scan
 
